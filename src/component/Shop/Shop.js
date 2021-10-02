@@ -7,6 +7,7 @@ import {addToDb} from '../../utilities/fakedb.js';
 import {getStoredCart} from '../../utilities/fakedb.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import AddToCart from '../AddToCart/AddToCart';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -92,7 +93,7 @@ const Shop = () => {
             <div className="search-container">
                 <img className="logo" src={logo} alt="" />
                 <input type="text" onChange={handleSearch} placeholder="Type here to search........." />
-                <p><FontAwesomeIcon icon={faShoppingCart} /> <span>{cart.length}</span></p>
+                <p><FontAwesomeIcon icon={faShoppingCart} /> <span><AddToCart cart={cart}></AddToCart></span></p>
             </div>
             <div className="shop-container">
                 <div className="product-container">
